@@ -1,0 +1,40 @@
+html, body {height:100%;}
+body {}
+
+.table {display:table;}
+.td {display:table-cell; vertical-align:top;}
+.h100 {height:100%;}
+
+.droppable_hover {background-color:#fdffcc !important;}
+
+.bootedi_bordered {border: 1px solid #ccc; background-color:#fff;}
+.bootedi_hmin50 {min-height:50px;}
+.bootedi_hmin150 {min-height:100px;}
+.bootedi_hover {box-shadow: 0 0 0 1px #5cb85c;}
+.bootedi_selected {box-shadow: 0 0 0 2px #428bca;}
+div.bootedi_item, p.bootedi_item {margin: 15px auto 15px auto;}
+.separator {border-top: 1px solid #777; margin-top:10px; padding-top:10px;}
+.opt_min {width:70px; display:inline;}
+
+#mainleft, #mainright {width:250px; background-color:#e5e5e5; position:fixed;}
+#mainright {top:0; right:0;}
+#mainleft, #maincenter, #mainright { padding:60px 10px 0 10px;}
+#ghostleft, #ghostright {width:250px; }
+#options {display:none;}
+#maintest {display:none; position:absolute; width:100%; top:60px;}
+#bootedi_actions {position:absolute; z-index:2000; color:#fff; background-color:#428bca; display:inline; padding:3px 3px 0 3px;}
+#bootedi_action_delete {cursor:pointer;}
+
+.tools_item {display:inline-block; width:100px;}
+.tools_item img {width:90px; height:50px; margin:5px; cursor:move;}
+.tools_item div {text-align:center; font-size:0.8em;}
+
+/* css hack for bootstrap modal */
+.modal {overflow-y:auto;}
+body.modal-open {overflow:auto;}
+
+.ui-accordion .ui-accordion-content {padding:0.6em; overflow:hidden;}
+#mainright_accordion .ui-accordion-content {font-size:0.8em;}
+table {border-collapse: separate; border-spacing: 15px;}
+.table_test {border-collapse: collapse; border-spacing: 0;}
+tr {min-height:10px;}

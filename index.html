@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Editor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="lib/jquery-ui-1.11.1.custom/jquery-ui.css">
+    <link rel="stylesheet" href="lib/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-select/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="bootedi.css">
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script src="lib/jquery-ui-1.11.1/jquery-ui.js"></script>
+    <script src="lib/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="js/johnresig_sji.js"></script>
+    <script src="js/jquery.htmlClean.js"></script>
+    <script src="js/bootedi.js"></script>
+    <!-- components -->
+    <!-- divs -->
+    <script src="js/components/bootstrap_container_fluid.js"></script>
+    <script src="js/components/bootstrap_container.js"></script>
+    <script src="js/components/bootstrap_row.js"></script>
+    <script src="js/components/bootstrap_col.js"></script>
+    <script src="js/components/html_div.js"></script>
+    <!-- HTML Forms -->
+    <script src="js/components/html_button.js"></script>
+    <script src="js/components/html_checkbox.js"></script>
+    <script src="js/components/html_input.js"></script>
+    <script src="js/components/html_radio.js"></script>
+    <script src="js/components/html_select.js"></script>
+    <script src="js/components/html_textarea.js"></script>
+    <!-- Bootstrap Forms -->
+    <script src="js/components/bootstrap_button.js"></script>
+    <script src="js/components/bootstrap_input.js"></script>
+    <script src="js/components/bootstrap_select.js"></script>
+    <script src="js/components/bootstrap_textarea.js"></script>
+    <!-- Text -->
+    <script src="js/components/html_h1.js"></script>
+    <script src="js/components/html_p.js"></script>
+    <script src="js/components/html_text.js"></script>
+    <!-- Table -->
+    <script src="js/components/bootstrap_table.js"></script>
+    <script src="js/components/bootstrap_tbody.js"></script>
+    <script src="js/components/bootstrap_tr.js"></script>
+    <script src="js/components/bootstrap_th.js"></script>
+    <script src="js/components/bootstrap_td.js"></script>
+    <!-- Bootstrap Components -->
+    <script src="js/components/bootstrap_alert.js"></script>
+    <script src="js/components/bootstrap_badge.js"></script>
+    <script src="js/components/bootstrap_glyphicon.js"></script>
+    <script src="js/components/bootstrap_jumbotron.js"></script>
+    <script src="js/components/bootstrap_label.js"></script>
+    <script src="js/components/bootstrap_pagination.js"></script>
+    <script src="js/components/bootstrap_progressbar.js"></script>
+    <style id="custom_css"></style>
+</head>
+<body>
+    
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">BootEdi <small>v0.3</small></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">File <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" id="filemenu_export">Export</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#" id="filemenu_build">Build</a></li>
+                <li><a href="#" id="filemenu_test">Test</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+<div id="main" class="table h100">
+    <div id="mainleft" class="h100"></div>
+    <div id="ghostleft" class="td h100"></div>
+    <div id="maincenter" class="td h100"></div>
+    <div id="ghostright" class="td h100"></div>
+    <div id="mainright" class="h100">
+        <div id="options">
+            <h3 id="opt_name"></h3>
+            <div class="row">
+                <div class="form-group">
+                    <label for="opt_id" class="col-sm-2 control-label">ID:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="opt_id">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"><strong>Component:</strong></div>
+                <div class="col-md-6" id="opt_component"></div>
+            </div>
+            <div id="mainright_accordion" class="separator">
+                <h3>Wording</h3>
+                <div>
+                    <div>
+                        <h5 class="text-center">Colors</h5>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-5 control-label">Font:</label>
+                                <div class="col-sm-7">
+                                    <input id="opt_color" class="form-control opt_input" placeholder="#000000" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-5 control-label">Background:</label>
+                                <div class="col-sm-7">
+                                    <input id="opt_background-color" class="form-control opt_input" placeholder="#ffffff" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="separator">
+                        <h5 class="text-center">Font</h5>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-3 control-label">Family:</label>
+                                <div class="col-sm-9">
+                                    <input id="opt_font-family" class="form-control opt_input" placeholder="Arial" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-3 control-label">Size:</label>
+                                <div class="col-sm-9">
+                                    <input id="opt_font-size" class="form-control opt_input" placeholder="12px" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-3 control-label">Align:</label>
+                                <div class="col-sm-9">
+                                    <select id="opt_text-align" class="form-control opt_input">
+                                        <option value="left">Left</option>
+                                        <option value="center">Center</option>
+                                        <option value="right">Right</option>
+                                        <option value="justify">Justify</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-3 control-label">Style:</label>
+                                <div class="col-sm-9">
+                                    <select id="opt_font-style" class="form-control opt_input">
+                                        <option value="normal">Normal</option>
+                                        <option value="italic">Italic</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-3 control-label">Weight:</label>
+                                <div class="col-sm-9">
+                                    <input id="opt_font-weight" class="form-control opt_input" placeholder="bold" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="separator">
+                        <h5 class="text-center">Padding</h5>
+                        <p class="text-center">
+                            <input id="opt_padding-top" class="opt_min form-control opt_input" placeholder="top" />
+                            <br/>
+                            <input id="opt_padding-left" class="opt_min form-control opt_input" placeholder="left" />
+                            &nbsp;
+                            <input id="opt_padding-right" class="opt_min form-control opt_input" placeholder="right" />
+                            <br/>
+                            <input id="opt_padding-bottom" class="opt_min form-control opt_input" placeholder="bottom" />
+                        </p>
+                    </div>
+                </div>
+                <h3>Size - Position</h3>
+                <div>
+                    <div>
+                        <h5 class="text-center">Margin</h5>
+                        <p class="text-center">
+                            <input id="opt_margin-top" class="opt_min form-control opt_input" placeholder="top" />
+                            <br/>
+                            <input id="opt_margin-left" class="opt_min form-control opt_input" placeholder="left" />
+                            &nbsp;
+                            <input id="opt_margin-right" class="opt_min form-control opt_input" placeholder="right" />
+                            <br/>
+                            <input id="opt_margin-bottom" class="opt_min form-control opt_input" placeholder="bottom" />
+                        </p>
+                    </div>
+                    <div class="separator">
+                        <h5 class="text-center">Size</h5>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-5 control-label">Width:</label>
+                                <div class="col-sm-7">
+                                    <input id="opt_width" class="form-control opt_input" placeholder="ex: 500px" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-5 control-label">Height:</label>
+                                <div class="col-sm-7">
+                                    <input id="opt_height" class="form-control opt_input" placeholder="ex: 50px" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="separator">
+                        <h5 class="text-center">Position</h5>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="opt_id" class="col-sm-3 control-label">Position:</label>
+                                <div class="col-sm-9">
+                                    <select id="opt_position" class="form-control opt_input">
+                                        <option value="static">Static</option>
+                                        <option value="absolute">Absolute</option>
+                                        <option value="relative">Relative</option>
+                                        <option value="fixed">Fixed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><br/>
+                        <p class="text-center">
+                            <input id="opt_top" class="opt_min form-control opt_input" placeholder="top" />
+                            <br/>
+                            <input id="opt_left" class="opt_min form-control opt_input" placeholder="left" />
+                            &nbsp;
+                            <input id="opt_right" class="opt_min form-control opt_input" placeholder="right" />
+                            <br/>
+                            <input id="opt_bottom" class="opt_min form-control opt_input" placeholder="bottom" />
+                        </p>
+                    </div>
+                </div>
+                <h3>Component</h3>
+                <div>
+                    <div id="options_plus"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div id="maintest"></div>
+
+<div class="modal fade" id="modal_export">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Export</h4>
+            </div>
+            <div class="modal-body">
+                <textarea id="bootedi_export_textarea" class="form-control" rows="10"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

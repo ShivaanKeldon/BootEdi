@@ -1,0 +1,9 @@
+{
+  "name": "bootedit",
+  "main": "index.html",
+  "window":{
+      "width":1800,
+      "height":950,
+      "toolbar": true
+  }
+}
